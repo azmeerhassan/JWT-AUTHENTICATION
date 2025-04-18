@@ -18,7 +18,9 @@ app.get('/posts', (req, res)=>{
 })
 
 app.get('/login', (req, res)=>{
-
+    const username = req.body.username
+    const user = {name: username}
+    jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
 })
 
 
